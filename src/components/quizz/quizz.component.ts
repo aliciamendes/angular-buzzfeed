@@ -27,7 +27,7 @@ export class QuizzComponent implements OnInit {
 
   ngOnInit(): void {
     if (quizz_questions) {
-      this.finished = false;
+      this.finished = !this.finished;
       this.title = quizz_questions.title;
 
       this.questions = quizz_questions.questions;
@@ -40,6 +40,7 @@ export class QuizzComponent implements OnInit {
 
   buttonPress(alias: string) {
     this.answers.push(alias);
+    this.nextSetp();
   }
 
   async nextSetp() {
@@ -48,7 +49,26 @@ export class QuizzComponent implements OnInit {
     if (this.questionMaxIndex > this.questionIndex) {
       this.questionSelected = this.questions[this.questionIndex];
     } else {
-      this.finished = true;
+      const result: string = await this.checkResult(this.answers);
+
+      this.finished = !this.finished;
+      this.answerSelected =
+        quizz_questions.results[result as keyof typeof quizz_questions.results];
     }
+  }
+
+  async checkResult(answers: string[]) {
+    const results = answers.reduce((previous, current, index, arr) => {
+      if (
+        arr.filter((item) => item === previous).length >
+        arr.filter((item) => item === current).length
+      ) {
+        return previous;
+      } else {
+        return current;
+      }
+    });
+
+    return results;
   }
 }

@@ -3,10 +3,10 @@
     <img src="../../assets/images/logo.png" alt="" />
     <h3>{{ title }}</h3>
   </div>
-  <div class="questions">
+  <div class="questions" *ngIf="!finished">
     <h3>{{ questionSelected.question }}</h3>
   </div>
-  <div class="options">
+  <div class="options" *ngIf="!finished">
     <button
       class="buttonOption"
       *ngFor="let option of questionSelected.options; let i = index"
@@ -17,6 +17,6 @@
   </div>
   <div *ngIf="finished" class="results">
     <h1>Seu resultado é:</h1>
-    <p>{{ "" }}</p>
+    <p>{{ answerSelected }}</p>
   </div>
 </div>
