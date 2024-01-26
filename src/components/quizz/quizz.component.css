@@ -1,0 +1,85 @@
+.container {
+  width: 80%;
+  margin: auto;
+  margin-top: 1.25rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.62rem;
+}
+
+.logo > h3 {
+  margin-top: 2rem;
+  margin-bottom: 1.6rem;
+  font-size: 2rem;
+}
+
+.questions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #4224d9;
+  border-radius: 0.5rem;
+  background-color: #644ed2;
+  width: 100%;
+  height: 12.5rem;
+  font-size: 1.35rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-bottom: 1.25rem;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  gap: 1.6rem;
+}
+
+.buttonOption {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 1px solid #18ab29;
+  width: 40%;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.06rem; /* 17px */
+  padding: 1rem 2rem;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #2f6627;
+}
+
+.buttonOption:hover {
+  background-color: #5cbfa2;
+  color: #4224d9;
+}
+
+.buttonOption:active {
+  position: relative;
+  top: 2px;
+  left: 1px;
+}
+
+.results {
+  width: 100%;
+  height: 21.8rem;
+  background-color: #210239;
+  border-radius: 0.62rem;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.results > h1 {
+}
+
+.results > p {
+}
